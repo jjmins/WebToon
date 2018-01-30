@@ -4,49 +4,78 @@
         xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
     </data>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="10">
+        android:weightSum="10"
+        >
+
+
 
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="9"
-            android:fitsSystemWindows="true">
+            android:layout_weight="9">
+
+            <FrameLayout
+                android:id="@+id/upview"
+                android:layout_width="match_parent"
+                android:layout_height="48dip"
+                app:layout_behavior="com.example.pc.webtoon.CustomBehavior"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@mipmap/search_black_press"
+                    />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="35dp"
+                    android:background="@mipmap/selector_actionbar_zzal_black"
+                    />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center">
+                </Spinner>
+
+            </FrameLayout>
 
             <android.support.design.widget.AppBarLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fitsSystemWindows="true"
                 android:theme="@style/setMenu"
                 >
-
                 <android.support.design.widget.CollapsingToolbarLayout
                     android:id="@+id/collapsing_toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:fitsSystemWindows="true"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                    app:contentScrim="?attr/colorPrimary">
+                    app:contentScrim="?attr/colorPrimary"
+                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                     <com.daimajia.slider.library.SliderLayout
                         android:id="@+id/mainTabSlider"
                         android:layout_width="match_parent"
-                        android:layout_height="150dp">
+                        android:layout_height="180dp">
+
                     </com.daimajia.slider.library.SliderLayout>
 
-                    <android.support.v7.widget.Toolbar
-                        android:id="@+id/mainToolbar"
-                        android:layout_width="match_parent"
-                        android:layout_height="?attr/actionBarSize"
-                        app:layout_collapseMode="pin"/>
 
-
+                    <!--<include-->
+                        <!--android:id="@+id/mainview"-->
+                        <!--layout="@layout/toolbar"/>-->
                 </android.support.design.widget.CollapsingToolbarLayout>
 
                 <android.support.design.widget.TabLayout
@@ -58,25 +87,30 @@
                     app:tabIndicatorHeight="0dp">
 
                 </android.support.design.widget.TabLayout>
-            </android.support.design.widget.AppBarLayout>
+
+        </android.support.design.widget.AppBarLayout>
 
             <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nestedscrollview"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:fillViewport="true"
-                app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+                app:layout_behavior=".CustomBehavior">
 
+                <!--android.support.design.widget.AppBarLayout$ScrollingViewBehavior-->
                 <android.support.v4.view.ViewPager
                     android:id="@+id/mainPager"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     >
-
                 </android.support.v4.view.ViewPager>
 
             </android.support.v4.widget.NestedScrollView>
 
+
+
         </android.support.design.widget.CoordinatorLayout>
+
 
         <LinearLayout
             android:layout_width="match_parent"

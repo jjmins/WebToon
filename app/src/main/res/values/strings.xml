@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WebToon</string>
+    <string name="behevior">com.example.pc.webtoon.CustomBehavior</string>
 </resources>
