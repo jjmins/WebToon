@@ -14,8 +14,6 @@
         android:weightSum="10"
         >
 
-
-
         <android.support.design.widget.CoordinatorLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -32,8 +30,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|right"
-                    android:layout_marginTop="3dp"
                     android:layout_marginRight="5dp"
+                    android:layout_marginTop="3dp"
                     android:background="@mipmap/search_black_press"
                     />
 
@@ -53,64 +51,65 @@
 
             </FrameLayout>
 
-            <android.support.design.widget.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:theme="@style/setMenu"
-                >
-                <android.support.design.widget.CollapsingToolbarLayout
-                    android:id="@+id/collapsing_toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:contentScrim="?attr/colorPrimary"
-                    app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-                    <com.daimajia.slider.library.SliderLayout
-                        android:id="@+id/mainTabSlider"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp">
-
-                    </com.daimajia.slider.library.SliderLayout>
 
 
-                    <!--<include-->
-                        <!--android:id="@+id/mainview"-->
-                        <!--layout="@layout/toolbar"/>-->
-                </android.support.design.widget.CollapsingToolbarLayout>
-
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/mainTab"
+                <android.support.design.widget.AppBarLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#FFF"
-                    app:tabIndicatorColor="@color/maincolor"
-                    app:tabIndicatorHeight="0dp">
+                    android:theme="@style/setMenu"
+                    >
 
-                </android.support.design.widget.TabLayout>
 
-        </android.support.design.widget.AppBarLayout>
+                    <android.support.design.widget.CollapsingToolbarLayout
+                        android:id="@+id/collapsing_toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:contentScrim="?attr/colorPrimary"
+                        app:layout_scrollFlags="scroll|enterAlways">
 
-            <android.support.v4.widget.NestedScrollView
-                android:id="@+id/nestedscrollview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fillViewport="true"
-                app:layout_behavior=".CustomBehavior">
 
-                <!--android.support.design.widget.AppBarLayout$ScrollingViewBehavior-->
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/mainPager"
+                        <com.daimajia.slider.library.SliderLayout
+                            android:id="@+id/mainTabSlider"
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp">
+
+                        </com.daimajia.slider.library.SliderLayout>
+
+                        <!--<include-->
+                        <!--android:id="@+id/mainview"-->
+                        <!--layout="@layout/toolbar"/>-->
+
+                    </android.support.design.widget.CollapsingToolbarLayout>
+
+                    <android.support.design.widget.TabLayout
+                        android:id="@+id/mainTab"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#FFF"
+                        app:tabIndicatorColor="@color/maincolor"
+                        app:tabIndicatorHeight="0dp">
+
+                    </android.support.design.widget.TabLayout>
+
+                </android.support.design.widget.AppBarLayout>
+
+                <android.support.v4.widget.NestedScrollView
+                    android:id="@+id/nestedscrollview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    >
-                </android.support.v4.view.ViewPager>
+                    android:fillViewport="true">
 
-            </android.support.v4.widget.NestedScrollView>
+                    <!--android.support.design.widget.AppBarLayout$ScrollingViewBehavior-->
+                    <android.support.v4.view.ViewPager
+                        android:id="@+id/mainPager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+                    </android.support.v4.view.ViewPager>
 
-
+                </android.support.v4.widget.NestedScrollView>
 
         </android.support.design.widget.CoordinatorLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"

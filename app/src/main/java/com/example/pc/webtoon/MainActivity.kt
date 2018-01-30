@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        setSupportActionBar(mainToolbar)
-
         var sliderlist = ArrayList<Int>()
 
         sliderlist.add(R.drawable.sliderone)
@@ -40,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             DefaultSliderView
                     .image(sliderlist[i])
             mainTabSlider.addSlider(DefaultSliderView)
-
+            Log.e("adfs","asdf")
         }
     }
 
