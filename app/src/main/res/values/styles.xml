@@ -7,14 +7,19 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+    <!--메뉴 간격 조절-->
+    <!--<style name="setMenu" parent="AppTheme">-->
+        <!--<item name="android:actionButtonStyle">@style/MyActionButtonStyle</item>-->
+    <!--</style>-->
 
-    <style name="setMenu" parent="AppTheme">
-        <item name="android:actionButtonStyle">@style/MyActionButtonStyle</item>
-    </style>
+    <!--<style name="MyActionButtonStyle" parent="AppTheme">-->
+        <!--<item name="android:padding">0dip</item>-->
+        <!--<item name="android:minWidth">35dip</item>-->
+    <!--</style>-->
 
-    <style name="MyActionButtonStyle" parent="AppTheme">
-        <item name="android:padding">0dip</item>
-        <item name="android:minWidth">35dip</item>
-    </style>
+    <!--<style name="Base.Widget.Design.TabLayout" parent="android:Widget">-->
+        <!--<item name="tabBackground">@drawable/select_color</item>-->
+        <!--<item name="android:padding">30dip</item>-->
+    <!--</style>-->
 
 </resources>
