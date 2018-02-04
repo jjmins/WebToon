@@ -10,10 +10,13 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.AnimationUtils
 import android.widget.TabHost
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView
 import com.example.pc.webtoon.Adapter.ViewPagerAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.support.v4.viewPager
 
 class MainActivity : AppCompatActivity() {
@@ -21,8 +24,15 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        setSupportActionBar(mainToolbar)
+        //setSupportActionBar(mainToolbar)
         var sliderlist = ArrayList<Int>()
+
+        //val sliderin : Animation = AnimationUtils.loadAnimation(this,R.anim.slider_in)
+
+        var parser = ImageParser()
+        parser.start()
+        parser.join()
+
 
         sliderlist.add(R.drawable.sliderone)
         sliderlist.add(R.drawable.slidertwo)
@@ -42,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             mainTabSlider.addSlider(DefaultSliderView)
         }
 
+
         mainTab.addTab(mainTab.newTab().setText("월"))
         mainTab.addTab(mainTab.newTab().setText("화"))
         mainTab.addTab(mainTab.newTab().setText("수"))
@@ -57,7 +68,6 @@ class MainActivity : AppCompatActivity() {
         mainPager.adapter = pageradapter
 
         mainPager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(mainTab))
-
 
         mainTab.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener{
             override fun onTabSelected(tab: TabLayout.Tab?) {

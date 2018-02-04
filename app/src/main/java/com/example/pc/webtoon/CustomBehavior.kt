@@ -43,29 +43,30 @@ class CustomBehavior(context: Context, attrs: AttributeSet) : CoordinatorLayout.
         }
 
         mDySinceDirectionChange += dy
+
         Log.e("mDySinceDirectionChange", mDySinceDirectionChange.toString())
-        if (mDySinceDirectionChange > child.height && !isOrWillBeHidden(child)) {            //hideView(child);
-            show(child)//true
+        if (dy > 0 && !isOrWillBeShown(child)) {            //hideView(child);
+           hide(child)//true
             Log.d("hideView", "hide")
-        } else if (mDySinceDirectionChange < 0 && !isOrWillBeShown(child)) {
-            hide(child)
+        } else if (dy < 0 && !isOrWillBeHidden(child)) {
+            show(child)
             Log.e("showView", "show")
         }
     }
 
     private fun isOrWillBeHidden(view: View): Boolean {
-        return if (view.visibility != View.VISIBLE) {
-            animState == ANIM_STATE_HIDING
+        return if (view.visibility == View.VISIBLE) {
+            animState != ANIM_STATE_HIDING // 0 - 1
         } else {
-            animState != ANIM_STATE_SHOWING
+            animState == ANIM_STATE_SHOWING// 0 - 2 = flase
         }
     }
 
     private fun isOrWillBeShown(view: View): Boolean {
-        return if (view.visibility == View.VISIBLE) {
-            animState == ANIM_STATE_SHOWING
+        return if (view.visibility != View.VISIBLE) {
+            animState != ANIM_STATE_SHOWING  // 0 - 1
         } else {
-            animState != ANIM_STATE_HIDING
+            animState == ANIM_STATE_HIDING  //  0 - 2  = flase
         }
     }
 
