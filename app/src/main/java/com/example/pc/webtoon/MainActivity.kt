@@ -15,6 +15,7 @@ import android.view.animation.AnimationUtils
 import android.widget.TabHost
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView
 import com.example.pc.webtoon.Adapter.ViewPagerAdapter
+import com.example.pc.webtoon.R.id.*
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.support.v4.viewPager
@@ -28,11 +29,6 @@ class MainActivity : AppCompatActivity() {
         var sliderlist = ArrayList<Int>()
 
         //val sliderin : Animation = AnimationUtils.loadAnimation(this,R.anim.slider_in)
-
-        var parser = ImageParser()
-        parser.start()
-        parser.join()
-
 
         sliderlist.add(R.drawable.sliderone)
         sliderlist.add(R.drawable.slidertwo)
@@ -51,7 +47,6 @@ class MainActivity : AppCompatActivity() {
                     .image(sliderlist[i])
             mainTabSlider.addSlider(DefaultSliderView)
         }
-
 
         mainTab.addTab(mainTab.newTab().setText("월"))
         mainTab.addTab(mainTab.newTab().setText("화"))
@@ -83,7 +78,6 @@ class MainActivity : AppCompatActivity() {
         })
 
     }
-
 
 
 //    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
