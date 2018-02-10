@@ -1,13 +1,8 @@
-package com.example.pc.webtoon
+package com.example.pc.webtoon.Utils
 
-import android.util.Log
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
-import org.w3c.dom.Document
-import org.w3c.dom.Element
-import java.net.ProtocolException
-import android.content.ClipData.Item
-
+import com.example.pc.webtoon.Data.WebtoonData
 
 
 /**
@@ -33,7 +28,6 @@ class Parser(var url : String) : Thread() {
         print(document.toString())
 
             var info: Elements = document!!.select("div.lst")
-
 
             for(element in info){
                 items.add(WebtoonData(element.select("a").select("span")

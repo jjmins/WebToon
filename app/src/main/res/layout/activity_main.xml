@@ -16,7 +16,7 @@
             android:id="@+id/upview"
             android:layout_width="match_parent"
             android:layout_height="48dip"
-            app:layout_behavior=".CustomBehavior"
+            app:layout_behavior="com.example.pc.webtoon.Utils.CustomBehavior"
             >
 
             <ImageView

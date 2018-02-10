@@ -1,8 +1,9 @@
-package com.example.pc.webtoon
+package com.example.pc.webtoon.Activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import com.example.pc.webtoon.R
 
 /**
  * Created by pc on 2018-02-05.

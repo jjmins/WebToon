@@ -1,4 +1,4 @@
-package com.example.pc.webtoon
+package com.example.pc.webtoon.Data
 
 import android.databinding.BindingAdapter
 import android.graphics.Color
@@ -9,7 +9,4 @@ import android.view.View
  */
 class WebtoonData(var img : String, var name :String,var author : String,var grade : String ,var url : String) {
 
-//    fun geturl(url : String){
-//        this.url = url
-//    }
 }

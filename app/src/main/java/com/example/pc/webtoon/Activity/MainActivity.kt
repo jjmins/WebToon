@@ -1,24 +1,12 @@
-package com.example.pc.webtoon
+package com.example.pc.webtoon.Activity
 
-import android.annotation.SuppressLint
-import android.graphics.drawable.Drawable
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
-import android.support.v4.view.PagerAdapter
-import android.util.Log
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.animation.Animation
-import android.view.animation.AnimationUtils
-import android.widget.TabHost
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView
 import com.example.pc.webtoon.Adapter.ViewPagerAdapter
-import com.example.pc.webtoon.R.id.*
+import com.example.pc.webtoon.R
 import kotlinx.android.synthetic.main.activity_main.*
-import org.jetbrains.anko.sdk25.coroutines.onClick
-import org.jetbrains.anko.support.v4.viewPager
 
 class MainActivity : AppCompatActivity() {
 
