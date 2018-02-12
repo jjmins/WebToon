@@ -10,27 +10,28 @@
     </data>
 
     <LinearLayout
-        android:layout_width="120dp"
-        android:layout_height="180dp"
+        android:layout_width="140dp"
+        android:layout_height="190dp"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/webImg"
             android:layout_width="match_parent"
-            android:layout_height="100dp"/>
+            android:layout_height="120dp"
+            android:background="@{data.setimg()}"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="vertical"
+        <RelativeLayout
             android:padding="5dp"
+            android:background="#f7f7f7"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="vertical"
             android:weightSum="3">
 
             <TextView
                 android:id="@+id/webText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:gravity="left|center"
                 android:text="@{data.name}"
                 android:textColor="@color/colorPrimaryDark"
@@ -38,10 +39,11 @@
                 tools:text="원드브레이커"/>
 
             <LinearLayout
+                android:id="@+id/grade"
+                android:layout_below="@+id/webText"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:orientation="horizontal"
                 >
 
                 <ImageView
@@ -53,22 +55,22 @@
                 <TextView
                     android:id="@+id/webGpoint"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:textColor="#fd1919"
+                    android:paddingLeft="3dp"
                     android:text="@{data.grade}"
                     tools:text="9.96"
-                    android:gravity="center|left"
-                    android:layout_marginLeft="3dp"/>
+                    android:gravity="center|left"/>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/webAuthor"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/grade"
                 tools:text="조용석"
                 android:text="@{data.author}"
                 android:gravity="left|center"/>
-        </LinearLayout>
+        </RelativeLayout>
     </LinearLayout>
 </layout>

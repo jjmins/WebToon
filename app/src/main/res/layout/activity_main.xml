@@ -10,7 +10,7 @@
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="9">
+        android:layout_weight="9.3">
 
         <FrameLayout
             android:id="@+id/upview"
@@ -57,11 +57,6 @@
 
             </com.daimajia.slider.library.SliderLayout>
 
-            <!--<include-->
-            <!--android:id="@+id/mainview"-->
-            <!--layout="@layout/toolbar"/>-->
-
-
             <android.support.design.widget.TabLayout
                 android:id="@+id/mainTab"
                 android:layout_width="match_parent"
@@ -72,9 +67,7 @@
                 app:tabMode="scrollable"
                 app:tabSelectedTextColor="#FFF">
             </android.support.design.widget.TabLayout>
-
         </android.support.design.widget.AppBarLayout>
-
 
         <android.support.v4.widget.NestedScrollView
             android:id="@+id/nestedscrollview"
@@ -83,7 +76,6 @@
             android:fillViewport="true"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <!--android.support.design.widget.AppBarLayout$ScrollingViewBehavior-->
             <android.support.v4.view.ViewPager
                 android:id="@+id/mainPager"
                 android:layout_width="match_parent"
@@ -93,12 +85,64 @@
 
         </android.support.v4.widget.NestedScrollView>
 
-
     </android.support.design.widget.CoordinatorLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="0.7"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/webtoonbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/menu_01_webtoon_off"/>
+
+        <ImageView
+            android:id="@+id/plusbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:background="@mipmap/menu_02_plus_off"/>
+
+        <ImageView
+            android:id="@+id/bestbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:background="@mipmap/menu_03_best_off"/>
+
+        <ImageView
+            android:id="@+id/playbtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:background="@mipmap/menu_04_get_off"/>
+
+        <ImageView
+            android:id="@+id/mybtn"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="10dp"
+            android:background="@mipmap/menu_05_my_off"/>
     </LinearLayout>
 </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.pc.webtoon.PagerFragment
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -24,57 +25,55 @@ import com.bumptech.glide.request.RequestOptions
 import com.github.nitrico.lastadapter.Holder
 
 
+
+@SuppressLint("ValidFragment")
 /**
  * Created by pc on 2018-01-31.
  */
 
-class Mon_Fragment() : android.support.v4.app.Fragment() {
+class Mon_Fragment @SuppressLint("ValidFragment") constructor
+(var date : String) : android.support.v4.app.Fragment() {
+       var dates = ""
+
+    init {
+        dates = date
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        var Mon = "http://comic.naver.com/webtoon/weekdayList.nhn?week=mon"
+        var Url = "http://comic.naver.com/webtoon/weekdayList.nhn?week="
 
         var view = inflater!!.inflate(R.layout.fragment_mon, container,false)
 
-//        var Thu = ""
-//        var Wed = ""
-//        var  = ""
-//        var mon = ""
-//        var mon = ""
-//        var mon = ""
-//        var mon =""
-
+        if(dates=="Complete") {
+            Url = "http://comic.naver.com/webtoon/finish"
+            dates = ".nhn"
+        }
 //        //파싱데이터
-        var parser = Parser(Mon)
+        var parser = Parser(Url+dates)
         parser.start()
         parser.join()
         var data = parser.Data()
-
-        var lm = LinearLayoutManager(context).apply {
-            orientation = LinearLayoutManager.HORIZONTAL
-        }//orientation = LinearLayoutManger.HoRIZONTAL(가로),VERTICAL(세로)
-
-
 
         var into = LastAdapter(data,BR.data)
                 .map<WebtoonData,WebtoonItemBinding>(R.layout.webtoon_item){
                     onClick{
                         var webtoonitem =it.binding.data
                         startActivity<WebToonView>("url" to webtoonitem!!.url)
-
                     }
 
-                    onCreate {
-                        var webtoonitem = it.binding.data
-                    Glide.with(view!!.context)
-                            .load(webtoonitem!!.img)
-                            .apply(RequestOptions()
-                                    .centerCrop()
-                            )
-                            .into(view.webImg)
-                }
+//                    onRecycle{
+//                        var webtoonitem = it.binding.data
+//                            Glide.with(view!!.context)
+//                            .load(webtoonitem!!.img)
+//                            .apply(RequestOptions()
+//                                    .centerCrop()
+//                            )
+//                            .into(view.webImg)
+//                    }
                 }
                 .into(view.mon_recyclerview)
 
