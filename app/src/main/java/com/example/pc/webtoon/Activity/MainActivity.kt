@@ -4,19 +4,22 @@ import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
+import android.view.Menu
+import android.view.MenuItem
 import com.daimajia.slider.library.SliderTypes.DefaultSliderView
 import com.example.pc.webtoon.Adapter.ViewPagerAdapter
 import com.example.pc.webtoon.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.jetbrains.anko.sdk25.coroutines.onClick
 import org.jetbrains.anko.startActivity
+import org.jetbrains.anko.toast
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //setSupportActionBar(mainToolbar)
+        setSupportActionBar(mainToolbar)
         var sliderlist = ArrayList<Int>()
 
         //val sliderin : Animation = AnimationUtils.loadAnimation(this,R.anim.slider_in)
@@ -127,12 +130,16 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-//    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
-//            return super.onOptionsItemSelected(item)
-//    }
-//
-//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-//        menuInflater.inflate(R.menu.menu,menu)
-//        return true
-//    }
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item!!.itemId){
+             R.id.search -> toast("search")
+             R.id.getzzal -> toast("getzzal")
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
 }

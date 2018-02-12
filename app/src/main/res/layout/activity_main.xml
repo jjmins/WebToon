@@ -14,34 +14,42 @@
 
         <FrameLayout
             android:id="@+id/upview"
-            android:layout_width="match_parent"
-            android:layout_height="48dip"
-            app:layout_behavior="com.example.pc.webtoon.Utils.CustomBehavior"
-            >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|right"
-                android:layout_marginRight="5dp"
-                android:background="@mipmap/search_black_press"
-                />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|right"
-                android:layout_marginRight="35dp"
-                android:background="@mipmap/selector_actionbar_zzal_black"
-                />
-
-            <Spinner
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center">
-            </Spinner>
+            android:layout_width="0dp"
+            android:layout_height="0dp">
 
         </FrameLayout>
+        <!--<FrameLayout-->
+        <!--android:id="@+id/upview"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="48dip"-->
+        <!--app:layout_scrollFlags="scroll|snap"-->
+        <!--app:layout_behavior="com.example.pc.webtoon.Utils.CustomBehavior"-->
+
+        <!--&gt;-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center|right"-->
+        <!--android:layout_marginRight="5dp"-->
+        <!--android:background="@mipmap/search_black_press"-->
+        <!--/>-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center|right"-->
+        <!--android:layout_marginRight="35dp"-->
+        <!--android:background="@mipmap/selector_actionbar_zzal_black"-->
+        <!--/>-->
+
+        <!--<Spinner-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center">-->
+        <!--</Spinner>-->
+
+        <!--</FrameLayout>-->
 
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
@@ -49,13 +57,31 @@
             android:fitsSystemWindows="true"
             >
 
-            <com.daimajia.slider.library.SliderLayout
-                android:id="@+id/mainTabSlider"
+            <android.support.design.widget.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                app:layout_scrollFlags="scroll">
+                android:layout_height="match_parent"
+                app:contentScrim="?attr/colorPrimary"
+                app:layout_scrollFlags="scroll|enterAlways">
 
-            </com.daimajia.slider.library.SliderLayout>
+                <com.daimajia.slider.library.SliderLayout
+                    android:id="@+id/mainTabSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="180dp"
+                    app:layout_scrollFlags="scroll">
+
+                </com.daimajia.slider.library.SliderLayout>
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/mainToolbar"
+                    android:theme="@style/setMenu"
+                    app:title=" "
+                    android:layout_width="match_parent"
+                    android:layout_height="48dip"
+                    app:layout_collapseMode="pin">
+                </android.support.v7.widget.Toolbar>
+
+            </android.support.design.widget.CollapsingToolbarLayout>
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/mainTab"
@@ -98,51 +124,51 @@
             android:id="@+id/webtoonbtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
             android:background="@mipmap/menu_01_webtoon_off"/>
 
         <ImageView
             android:id="@+id/plusbtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
             android:background="@mipmap/menu_02_plus_off"/>
 
         <ImageView
             android:id="@+id/bestbtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
             android:background="@mipmap/menu_03_best_off"/>
 
         <ImageView
             android:id="@+id/playbtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
             android:background="@mipmap/menu_04_get_off"/>
 
         <ImageView
             android:id="@+id/mybtn"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_weight="1"
             android:background="@mipmap/menu_05_my_off"/>
     </LinearLayout>
 </LinearLayout>
