@@ -1,5 +1,6 @@
 package com.example.pc.webtoon.Utils
 
+import android.util.Log
 import org.jsoup.Jsoup
 import org.jsoup.select.Elements
 import com.example.pc.webtoon.Data.WebtoonData
@@ -35,7 +36,7 @@ class Parser(var url : String) : Thread() {
                         element.select("a").select("span")
                                 .select("span").select("img").attr("alt"),
                         element.select("a").select("p").text(),
-                        element.select("a").select("div.sub_info")
+                        element.select("a").select("div.toon_detail_info")
                                 .select("span.txt_score").text(),
                         "http://comic.naver.com/" + element.select("a").attr("href")))
                 }

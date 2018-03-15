@@ -26,5 +26,4 @@ class WebtoonData(var img : String, var name :String,var author : String,var gra
         val data : Drawable = BitmapDrawable(d)
         return data!!
     }
-
 }
